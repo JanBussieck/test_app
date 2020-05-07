@@ -16,7 +16,8 @@ defmodule TestappWeb.Router do
   scope "/", TestappWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    #get "/", PageController, :index
+    resources "/", JobController
   end
 
   # Other scopes may use custom stacks.
