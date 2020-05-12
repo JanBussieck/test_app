@@ -17,6 +17,7 @@ defmodule TestappWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/policy", PageController, :policy
     resources "/jobs", JobController
   end
 
