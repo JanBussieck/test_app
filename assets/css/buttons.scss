@@ -1,0 +1,38 @@
+.btn {
+  @apply w-full;
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  @apply border;
+  @apply border-transparent;
+  @apply text-base;
+  @apply leading-6;
+  @apply font-medium;
+  @apply rounded-md;
+  @apply transition;
+  @apply duration-150;
+  @apply ease-in-out;
+}
+.btn:focus {
+  @apply shadow-outline;
+  @apply outline-none;
+}
+
+.btn-lg {
+  @apply px-8;
+  @apply py-3;
+}
+@screen md {
+  .btn-lg {
+    @apply px-10;
+    @apply py-4;
+    @apply text-lg;
+  }
+}
+
+.btn-teal {
+  @apply bg-teal-600;
+}
+.btn-teal:hover {
+  @apply bg-teal-500;
+}
