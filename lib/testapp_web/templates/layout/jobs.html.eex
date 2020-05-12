@@ -1,19 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Medeed</title>
+    <title>Medeed - Jobs</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
-  <body class="bg-gray-900 bg-center bg-cover bg-fixed bg-no-repeat selection-teal-200" style="background-image: url(<%=Routes.static_path(@conn, "/images/bg.jpg") %>)">
+  <body class="bg-gray-900selection-teal-200">
     <section class="relative bg-gray-900 min-h-screen text-gray-500 leading-relaxed max-w-3xl p-12 block">
-      <header role='banner' class='flex items-center'>
-          <img class="h-12 w-auto" src="<%= Routes.static_path(@conn, "/images/medeed.png") %>" alt="Medeed"/>
-          <h1 class='text-white uppercase font-bold text-xl'>Medeed</h1>
-      </header>
       <main role="main">
         <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
         <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>

@@ -4,6 +4,8 @@ defmodule TestappWeb.JobController do
   alias Testapp.Jobs
   alias Testapp.Jobs.Job
 
+  plug :put_layout, "jobs.html"
+
   def index(conn, _params) do
     jobs = Jobs.list_jobs()
     render(conn, "index.html", jobs: jobs)
