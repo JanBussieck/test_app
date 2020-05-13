@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for job <- @jobs do %>
+    <tr>
+      <td><%= job.title %></td>
+      <td><%= job.description %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

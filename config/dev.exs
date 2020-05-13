@@ -61,7 +61,8 @@ config :testapp, TestappWeb.Endpoint,
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/testapp_web/(live|views)/.*(ex)$",
-      ~r"lib/testapp_web/templates/.*(eex)$"
+      ~r"lib/testapp_web/templates/.*(eex)$",
+      ~r{lib/testapp_web/live/.*(ex)$}
     ]
   ]
 

@@ -7,6 +7,11 @@ defmodule Testapp.Jobs do
   alias Testapp.Repo
 
   alias Testapp.Jobs.Job
+  @topic inspect(__MODULE__)
+
+  def subscribe do
+    Phoenix.PubSub.subscribe(Testapp.PubSub, @topic)
+  end
 
   @doc """
   Returns the list of jobs.
