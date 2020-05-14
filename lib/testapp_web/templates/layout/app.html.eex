@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Medeed</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <%= csrf_meta_tag() %>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
   <body class="bg-gray-900 bg-center bg-cover bg-fixed bg-no-repeat selection-teal-200" style="background-image: url(<%=Routes.static_path(@conn, "/images/bg.jpg") %>)">
