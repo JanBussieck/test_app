@@ -11,7 +11,7 @@
   <body class="bg-gray-900 bg-center bg-cover bg-fixed bg-no-repeat selection-teal-200" style="background-image: url(<%=Routes.static_path(@conn, "/images/bg.jpg") %>)">
     <section class="relative bg-gray-900 min-h-screen text-gray-500 leading-relaxed max-w-3xl p-12 block">
       <header role='banner' class='flex items-center'>
-          <img class="h-12 w-auto mr-4 border-gray-100 border-solid border-2" src="<%= Routes.static_path(@conn, "/images/medeed.png") %>" alt="Medeed"/>
+          <img class="h-12 rounded-sm w-auto mr-4 border-gray-100 border-solid border-2" src="<%= Routes.static_path(@conn, "/images/medeed.png") %>" alt="Medeed"/>
           <h1 class='text-white uppercase font-bold text-xl'>Medeed</h1>
       </header>
       <main role="main">
