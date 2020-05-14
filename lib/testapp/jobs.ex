@@ -58,6 +58,7 @@ defmodule Testapp.Jobs do
     %Job{}
     |> Job.changeset(attrs)
     |> Repo.insert()
+    |> broadcast_change([:job, :created])
   end
 
   @doc """
@@ -105,5 +106,11 @@ defmodule Testapp.Jobs do
   """
   def change_job(%Job{} = job, attrs \\ %{}) do
     Job.changeset(job, attrs)
+  end
+
+  defp broadcast_change({:ok, result}, event) do
+    Phoenix.PubSub.broadcast(LiveViewTodos.PubSub, @topic, {__MODULE__, event, result})
+
+    {:ok, result}
   end
 end
