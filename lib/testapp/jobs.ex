@@ -109,7 +109,7 @@ defmodule Testapp.Jobs do
   end
 
   defp broadcast_change({:ok, result}, event) do
-    Phoenix.PubSub.broadcast(LiveViewTodos.PubSub, @topic, {__MODULE__, event, result})
+    Phoenix.PubSub.broadcast(Testapp.PubSub, @topic, {__MODULE__, event, result})
 
     {:ok, result}
   end
