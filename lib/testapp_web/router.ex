@@ -18,7 +18,10 @@ defmodule TestappWeb.Router do
 
     get "/", PageController, :index
     get "/policy", PageController, :policy
+    get "/thank-you", PageController, :thank_you
+
     resources "/jobs", JobController
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.

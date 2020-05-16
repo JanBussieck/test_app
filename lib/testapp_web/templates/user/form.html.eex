@@ -1,27 +1,49 @@
 <%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+      <p>Etwas ist schief gelaufen, versuche es erneut!</p>
     </div>
   <% end %>
-
-  <%= label f, :name %>
-  <%= text_input f, :name %>
-  <%= error_tag f, :name %>
-
-  <%= label f, :email %>
-  <%= text_input f, :email %>
-  <%= error_tag f, :email %>
-
-  <%= label f, :occupation %>
-  <%= text_input f, :occupation %>
-  <%= error_tag f, :occupation %>
-
-  <%= label f, :accepts_terms %>
-  <%= checkbox f, :accepts_terms %>
-  <%= error_tag f, :accepts_terms %>
-
   <div>
-    <%= submit "Save" %>
+    <div>
+      <div>
+        <h3 class="text-lg leading-6 font-medium text-gray-200">
+          Zusätzliche Informationen
+        </h3>
+        <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-400">
+          Diese Informationen werden vertraulich behandelt und nicht an Dritte weitergegeben.
+        </p>
+      </div>
+      <div class="mt-6 sm:mt-5">
+        <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+          <label for="first_name" class="block text-sm font-medium leading-5 text-gray-500 sm:mt-px sm:pt-2">
+            Name
+          </label>
+          <div class="mt-1 sm:mt-0 sm:col-span-2">
+            <div class="rounded-md shadow-sm">
+              <%= text_input f, :name, [class: "form-input text-gray-700 block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"] %>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 sm:mt-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+          <label for="about" class="block text-sm font-medium leading-5 text-gray-500 sm:mt-px sm:pt-2">
+            Genaue Berufsbeschreibung
+          </label>
+          <div class="mt-1 sm:mt-0 sm:col-span-2">
+            <div class="max-w-lg flex rounded-md shadow-sm">
+              <%= textarea f, :occupation, [class: "form-textarea text-gray-700 block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"] %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 border-t border-gray-200 pt-5">
+        <div class="flex justify-end">
+          <span class="ml-3 inline-flex rounded-md shadow-sm">
+            <%= submit "Speichern", [class: "inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:border-teal-700 focus:shadow-outline-teal active:bg-teal-700 transition duration-150 ease-in-out"] %>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>

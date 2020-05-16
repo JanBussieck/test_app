@@ -7,12 +7,10 @@ defmodule Testapp.JobsLive do
   def mount(_params, _session, socket) do
     Jobs.subscribe()
 
-    IO.puts 'mounting live view'
     {:ok, fetch(socket)}
   end
 
   def render(assigns) do
-    IO.inspect assigns
     JobView.render("jobs.html", assigns)
   end
 
@@ -33,9 +31,7 @@ defmodule Testapp.JobsLive do
   end
 
   defp fetch(socket) do
-    IO.puts 'fetch jobs'
     jobs = Jobs.list_jobs()
-    IO.inspect jobs
     assign(socket, %{jobs: jobs})
   end
 end

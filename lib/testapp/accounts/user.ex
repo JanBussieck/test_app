@@ -15,6 +15,6 @@ defmodule Testapp.Accounts.User do
   def changeset(user, attrs) do
     user
     |> cast(attrs, [:name, :email, :occupation, :accepts_terms])
-    |> validate_required([:name, :email, :occupation, :accepts_terms])
+    |> validate_required([:email])
   end
 end
