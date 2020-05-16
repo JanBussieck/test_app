@@ -21,7 +21,7 @@ defmodule TestappWeb.Router do
     get "/thank-you", PageController, :thank_you
 
     resources "/jobs", JobController
-    resources "/users", UserController
+    resources "/users", UserController, except: [:show, :index]
   end
 
   # Other scopes may use custom stacks.
