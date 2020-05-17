@@ -1,5 +1,34 @@
 <div class="flex justify-center">
-<div class="flex-1 bg-white shadow overflow-hidden sm:rounded-md max-w-screen-lg">
+<div class="flex-4 bg-white shadow sm:rounded-md mr-4 w-3/12">
+  <div class="px-4 py-4 sm:px-6">
+    <div class="space-y-4">
+      <h2 class="text-xl font-bold leading-5 font-medium text-gray-700">
+        Jobs filtern
+      </h2>
+      <h3 class="text-sm leading-5 font-medium tracking-wide text-gray-500 uppercase">
+        Job Type
+      </h3>
+      <div class="inline-flex flex-wrap">
+        <button class="bg-gray-300 hover:text-opacity-100 text-opacity-50 hover:bg-gray-400 text-teal-600 mr-4 mb-2 py-2 px-4 rounded-sm tracking-wide">
+          Full-time
+        </button>
+        <button class="bg-gray-300 hover:text-opacity-100 text-opacity-50 hover:bg-gray-400 text-teal-600 mr-4 mb-2 py-2 px-4 rounded-sm tracking-wide">
+          Part-time
+        </button>
+        <button class="bg-gray-300 hover:text-opacity-100 text-opacity-50 hover:bg-gray-400 text-teal-600 mr-4 mb-2 py-2 px-4 rounded-sm tracking-wide">
+          Freelance
+        </button>
+      </div>
+      <h3 class="text-sm leading-5 font-medium tracking-wide text-gray-500 uppercase">
+        Category
+      </h3>
+      <h3 class="text-sm leading-5 font-medium tracking-wide text-gray-500 uppercase">
+        Location
+      </h3>
+    </div>
+  </div>
+</div>
+<div class="flex-1 bg-white shadow sm:rounded-md w-9/12 max-w-screen-lg">
   <ul>
     <%= for job <- @jobs do %>
     <li class="border-b border-gray-200">

@@ -2,7 +2,7 @@
   <div class="bg-gray-800 pb-32">
     <nav class="bg-gray-800">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="border-b border-gray-700">
+        <div class="border-b border-gray-700 relative">
           <div class="flex items-center justify-between h-16 px-4 sm:px-0">
             <div class="flex items-center">
               <div class="flex-shrink-0">
@@ -15,6 +15,13 @@
                   <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700">Jobs</a>
                   <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Team</a>
                 </div>
+              </div>
+              <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
+                <span class="inline-flex rounded-md shadow">
+                  <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-teal-600 bg-white hover:text-teal-500 focus:outline-none focus:shadow-outline-blue active:bg-gray-50 active:text-teal-700 transition duration-150 ease-in-out">
+                    Job Posten
+                  </a>
+                </span>
               </div>
             </div>
             <div class="-mr-2 flex md:hidden">
@@ -48,43 +55,42 @@
     </nav>
     <header class="py-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl text-center leading-9 font-bold text-white">
-          Jobs
+        <h1 class="text-4xl text-center leading-9 font-bold text-white">
+          Finde deinen Job in der Medizinbranche
         </h1>
+        <h2 class="text-2xl text-center leading-9 font-bold text-teal-500">
+          von der Krankenschwester bis zum Chefarzt
+        </h2>
       </div>
     </header>
   </div>
 
   <main class="-mt-32">
-    <div class="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-screen-xl mx-auto pb-12">
+      <div class="text-gray-200 text-md">
+        über <span class='text-teal-600'>340</span> Angebote
+      </div>
       <!-- Replace with your content -->
       <%= live_render(@conn, Testapp.JobsLive) %>
       <!-- /End replace -->
-      <div class="max-w-screen-lg mx-auto py-8">
-        <div class="px-6 py-6 bg-teal-700 rounded-lg md:py-8 md:px-8 xl:flex xl:items-center">
-          <div class="xl:w-0 xl:flex-1">
-            <h2 class="text-2xl leading-8 font-extrabold tracking-tight text-white sm:text-3xl sm:leading-9">
-              Want products news and updates?
-            </h2>
-            <p class="mt-3 max-w-3xl text-lg leading-6 text-teal-200">
-              Sign up for our newsletter to stay up to date.
-            </p>
-          </div>
-          <div class="mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8">
-            <form class="sm:flex">
-              <input aria-label="Email address" type="email" required class="appearance-none w-full px-5 py-3 border border-transparent text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out" placeholder="Enter your email" />
-              <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-                <button class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-400 focus:outline-none focus:bg-teal-400 transition duration-150 ease-in-out">
-                  Notify me
-                </button>
-              </div>
-            </form>
-            <p class="mt-3 text-sm leading-5 text-teal-200">
-              We care about the protection of your data. Read our
-              <a href="#" class="text-white font-medium underline">
-                Privacy Policy.
-              </a>
-            </p>
+      <div class="fixed inset-x-0 bottom-0">
+        <div class="px-4 py-4 bg-teal-700">
+          <div class="max-w-screen-lg m-auto xl:flex xl:items-center">
+            <div class="xl:w-0 xl:flex-1">
+              <h2 class="leading-8 font-extrabold tracking-tight text-white sm:text-2xl sm:leading-9">
+                Receive weekly updates of all new jobs
+              </h2>
+            </div>
+            <div class="mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8">
+              <form class="sm:flex">
+                <input aria-label="Email address" type="email" required class="appearance-none w-full px-5 py-3 border border-transparent text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out" placeholder="Enter your email" />
+                <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                  <button class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-400 focus:outline-none focus:bg-teal-400 transition duration-150 ease-in-out">
+                    Notify me
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
