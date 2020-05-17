@@ -67,9 +67,6 @@
 
   <main class="-mt-32">
     <div class="max-w-screen-xl mx-auto pb-12">
-      <div class="text-gray-200 text-md">
-        über <span class='text-teal-600'>340</span> Angebote
-      </div>
       <!-- Replace with your content -->
       <%= live_render(@conn, Testapp.JobsLive) %>
       <!-- /End replace -->
