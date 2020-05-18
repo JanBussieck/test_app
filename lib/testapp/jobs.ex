@@ -23,7 +23,7 @@ defmodule Testapp.Jobs do
 
   """
   def list_jobs do
-    Repo.all(Job)
+    Repo.all(Job) |> Repo.preload(:tags)
   end
 
   @doc """
