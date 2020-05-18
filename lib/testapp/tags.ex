@@ -7,6 +7,7 @@ defmodule Testapp.Tags do
   alias Testapp.Repo
 
   alias Testapp.Tags.Tag
+  alias Testapp.Jobs.Job
   alias Testapp.JobTag
 
   def list_tags do
@@ -17,6 +18,25 @@ defmodule Testapp.Tags do
     %Tag{}
     |> Tag.changeset(attrs)
     |> Repo.insert()
+  end
+
+  def add_tag(job, title) when is_binary(title) do
+    tag =
+      case Repo.get_by(Tag, %{title: title}) do
+        nil ->
+          %Tag{} |> Topic.changeset(%{title: title}) |> Repo.insert!()
+        tag ->
+          tag
+      end
+    add_tag(job, tag.id)
+  end
+
+  def add_tag(%{job_id: job_id}, tag_id) do
+    add_tag(job_id, tag_id)
+  end
+
+  def add_tag(%Job{} = job, tag_id) do
+    add_tag(job.id, tag_id)
   end
 
   def add_tag(job_id, tag_id) do
