@@ -2,6 +2,7 @@ defmodule Testapp.JobsLive do
   use Phoenix.LiveView
 
   alias Testapp.Jobs
+  alias Testapp.Tags
   alias TestappWeb.JobView
 
   def mount(_params, _session, socket) do
@@ -32,6 +33,7 @@ defmodule Testapp.JobsLive do
 
   defp fetch(socket) do
     jobs = Jobs.list_jobs()
-    assign(socket, %{jobs: jobs})
+    tags = Tags.list_tags()
+    assign(socket, %{jobs: jobs, tags: tags})
   end
 end

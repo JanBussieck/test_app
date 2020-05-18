@@ -10,19 +10,22 @@
             Job Type
           </h3>
           <div class="inline-flex flex-wrap">
-            <button class="bg-gray-300 hover:text-opacity-100 text-opacity-50 hover:bg-gray-400 text-gray-600 mr-4 mb-2 py-2 px-4 rounded-sm tracking-wide">
-              Full-time
-            </button>
-            <button class="bg-gray-300 hover:text-opacity-100 text-opacity-50 hover:bg-gray-400 text-gray-600 mr-4 mb-2 py-2 px-4 rounded-sm tracking-wide">
-              Part-time
-            </button>
-            <button class="bg-gray-300 hover:text-opacity-100 text-opacity-50 hover:bg-gray-400 text-gray-600 mr-4 mb-2 py-2 px-4 rounded-sm tracking-wide">
-              Freelance
-            </button>
+            <%= for type <- ["Full-time", "Part-time", "Freelance"] do %>
+              <button class="bg-gray-300 hover:text-opacity-100 text-opacity-50 hover:bg-gray-400 text-gray-600 mr-3 mb-2 py-2 px-3 text-sm rounded-sm tracking-wide">
+                <%= type %>
+              </button>
+            <% end %>
           </div>
           <h3 class="text-sm leading-5 font-medium tracking-wide text-gray-500 uppercase">
             Category
           </h3>
+          <div class="inline-flex flex-wrap">
+            <%= for tag <- @tags do %>
+              <button class="bg-gray-300 hover:text-opacity-100 text-opacity-50 hover:bg-gray-400 text-gray-600 mr-3 mb-2 py-2 px-3 text-sm rounded-sm tracking-wide">
+                <%= tag.title %>
+              </button>
+            <% end %>
+          </div>
           <h3 class="text-sm leading-5 font-medium tracking-wide text-gray-500 uppercase">
             Location
           </h3>
