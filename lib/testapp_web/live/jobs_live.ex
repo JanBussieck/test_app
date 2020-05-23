@@ -21,6 +21,18 @@ defmodule Testapp.JobsLive do
     {:noreply, fetch(socket)}
   end
 
+  def handle_event("create", %{"job" => job}, socket) do
+    Jobs.create_job(job)
+
+    {:noreply, fetch(socket)}
+  end
+
+  def handle_event("filter", %{"type" => value}, socket) do
+    jobs = Jobs.filter(%{job_type: value})
+
+    {:noreply, fetch(socket, jobs)}
+  end
+
   # def handle_event("toggle_done", %{"id" => id}, socket) do
   #   todo = Jobss.get_todo!(id)
   #   Jobs.update_todo(todo, %{done: !todo.done})
@@ -29,6 +41,12 @@ defmodule Testapp.JobsLive do
 
   def handle_info({Jobs, [:job | _], _}, socket) do
     {:noreply, fetch(socket)}
+  end
+
+
+  defp fetch(socket, jobs) do
+    tags = Tags.list_tags()
+    assign(socket, %{jobs: jobs, tags: tags})
   end
 
   defp fetch(socket) do

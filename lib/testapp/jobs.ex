@@ -26,6 +26,20 @@ defmodule Testapp.Jobs do
     Repo.all(Job) |> Repo.preload(:tags)
   end
 
+  def filter(params \\ %{}) do
+    filters = Ecto.Changeset.cast(
+        %Job{},
+        params,
+        [:job_type]
+      )
+      |> Map.fetch!(:changes)
+      |> Map.to_list
+
+    Job
+      |> where(^filters)
+      |> Repo.all
+  end
+
   @doc """
   Gets a single job.
 
